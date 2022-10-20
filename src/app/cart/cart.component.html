@@ -1,9 +1,16 @@
-
-<ul class="list-group-item container">
-    <li class="list-group-item active ">
-        This your cart :-
-    </li>
-    <li *ngFor = "let item of products; let i = index " class="list-group-item" >
-        {{item.quantity}}  {{ item.Name}} <a (click) ="remove(i)" >remove</a>
-    </li>  
-</ul>
+<table class="table table-dark" class="container">
+    <thead>
+      <tr>
+        <th scope="col">quantity</th>
+        <th scope="col">Product-Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products; let i = index ">
+       
+        <td> {{item.quantity}}</td>
+        <td> {{ item.Name}}</td>
+        <td>  </td>
+      </tr>
+    </tbody>  
+</table>

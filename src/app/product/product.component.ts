@@ -27,21 +27,15 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  productSelected: boolean = false
-
+  productSelected:boolean = false
   selectedProduct = ''
-
   select = ''
   name: boolean = false
   addedProduct: any
-
- 
-
   checkout() {
     this.router.navigate(['cart'])
     this.authService.login()
   }
-
   inputnumber = 0;
 
   plus(val: any) {
@@ -52,8 +46,6 @@ export class ProductComponent implements OnInit {
     console.log(this.products[val-1]);
     this.products[val-1].quantity= this.products[val-1].quantity+1;
     console.log(this.products[val-1].quantity);
-
-
   }
   minus(val:any) {
     if (this.products[val-1].quantity!==0) {
