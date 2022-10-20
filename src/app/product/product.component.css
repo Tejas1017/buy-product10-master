@@ -1,0 +1,26 @@
+img {
+    height: 200px;
+    width: 250px;
+    size: absolute;
+}
+.card {
+    border: 1px solid #ddd;
+}
+button{
+    padding-bottom: 3px;
+}
+#input {
+    width: 30px;
+}
+.form-control {
+    width: 40px;
+}
+.hhhh{
+    display: flex;
+    flex-direction: row;
+    margin-left: 35px;
+    margin-top: 10px;
+}
+#margin{
+    margin-left: 10px;
+}

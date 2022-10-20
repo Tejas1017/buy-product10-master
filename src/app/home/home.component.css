@@ -1,0 +1,36 @@
+form {
+    display: flex;
+    margin-top: 20px;
+}
+a {
+    margin-left: 3px;
+}
+#form{
+    width: 260px;
+    margin-left: 90px;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+    width: 130px;
+    align-items: center;
+    
+    
+   
+    
+}
+
+.bttn1{
+    margin-top: 5px;
+}
+a {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+    width: 130px;
+    align-content: center;
+    
+}
