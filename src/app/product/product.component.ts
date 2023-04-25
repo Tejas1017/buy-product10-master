@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
     
   }
 
-  abc: any = [];
+  abc: {Name:string,quantity:number}[];
   products : {Id : number, Name : string, img: string, quantity:number}[];
 
   ngOnInit(): void {
@@ -41,11 +41,13 @@ export class ProductComponent implements OnInit {
   plus(val: any) {
     this.productSelected = true
     this.selectedProduct = this.products[val-1].Name
-    this.abc.push(this.selectedProduct)
-    console.log(val)
-    console.log(this.products[val-1]);
+    
+    console.log('heheheh',this.abc)
+    
+    // console.log(val)
+    //console.log(this.products[val-1]);
     this.products[val-1].quantity= this.products[val-1].quantity+1;
-    console.log(this.products[val-1].quantity);
+    //console.log(this.products[val-1].quantity);
   }
   minus(val:any) {
     if (this.products[val-1].quantity!==0) {

@@ -13,9 +13,7 @@ import { ProductComponent } from "./product.component";
     imports:[
          FormsModule,
          CommonModule ,
-         ProductRoutingModule
-         
-         
+         ProductRoutingModule   
     ],
    
    

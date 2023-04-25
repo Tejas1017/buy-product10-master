@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private _uname: DesignutilityService, private authService: Auth) {
     this._uname.username.subscribe(uname => {
-      this.username = uname
+    this.username = uname
     })
   }
 
@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
 
   inputName(uname) {
     this.display = true
-    // uname.value = this.username
     this._uname.username.next(uname.value)
 
   }

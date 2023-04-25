@@ -9,7 +9,10 @@ import { ProductsService } from '../appServices/products.service';
 })
 export class CartComponent implements  DoCheck  {
   constructor(private _cart:DesignutilityService, private _products: ProductsService) { 
-    this.products = this._products.products
+    //this._cart = this._cart.cart
+    this.products = this._products.products.filter((item)=>{
+      return item.quantity > 0;
+    })
   }
   
   quant0:boolean=false
@@ -17,6 +20,7 @@ export class CartComponent implements  DoCheck  {
     for(let i =0;i<this.products.length;i++){
       if(this.products[i].quantity==0){
         console.log("yooo")
+        console.log(this.products)
       }
     }
   }

@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
    }
    username:string = ""
    helllo = 'heyy'
-  ngOnInit(): void {
+   ngOnInit(): void {
  
   }
   

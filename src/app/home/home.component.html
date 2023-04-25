@@ -13,15 +13,6 @@
         <div class="">
          
             <form >
-
-              
-              <!-- <input type="text" class="form-control text-center" placeholder="Welcome" #name [(ngModel)]="username" name = "ngForm"> -->
-              
-              <!-- <span>
-                <a routerLink="../product" class="btn btn-success " type="button" (click)="inputName(name)">To Store</a>
-
-              </span>
-               -->
             </form>
           
         </div>
@@ -33,9 +24,7 @@
          <input type="text"class='form-control text-center' placeholder="login"
          #name1
          required
-         email 
-       >
-         <!-- <span class="help-block" *ngIf="email.invalid && email.touched">Please enter valid value!!</span> -->
+         email>
         </p>
         <p>
           <label for="">Password:</label>
@@ -49,7 +38,7 @@
 
 
       <div class="col-md-4 text-center">
-        <p *ngIf=display>{{username}}</p>
+      <p *ngIf=display>{{username}}</p>
       </div>
     </div>
   </div>

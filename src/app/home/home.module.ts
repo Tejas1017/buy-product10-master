@@ -15,8 +15,6 @@ import { HomeComponent } from "./home.component";
         CommonModule,
         ReactiveFormsModule,
         BrowserModule
-        
-   
     ]
 
 })
