@@ -1,6 +1,7 @@
 import { Component, DoCheck, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { DesignutilityService } from '../appServices/designutility.service';
 import { ProductsService } from '../appServices/products.service';
+import { Cartservice } from '../appServices/quantityitem.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,7 +9,7 @@ import { ProductsService } from '../appServices/products.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements  DoCheck  {
-  constructor(private _cart:DesignutilityService, private _products: ProductsService) { 
+  constructor(private _cart:DesignutilityService, private _products: ProductsService,private _cartService:Cartservice) { 
     //this._cart = this._cart.cart
     this.products = this._products.products.filter((item)=>{
       return item.quantity > 0;
@@ -28,6 +29,13 @@ export class CartComponent implements  DoCheck  {
   serverElements = []
 
   ngOnInit(): void {
+  }
+
+  addItemToCart(item: any): void {
+    this._cartService.addItem(item)
+  }
+  removeItemFromCart(item:any):void{
+    this._cartService.removeItem(item)
   }
   remove(index:number){
     for(let i=0;i<this.products.length;i++){

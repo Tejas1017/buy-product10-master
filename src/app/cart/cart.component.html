@@ -2,16 +2,23 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col">Quantity</th>
-      <th scope="col">Product</th>
+      <th class="tilte"scope="col">Quantity</th>
+      <th class="tilte" scope="col">Product</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of products; let i = index ">
-      <td>{{ item.quantity }}</td>
-      <td>{{ item.Name }} <img [src]="item.img" alt=""></td>
+      <div class="quantity">
+        <td> <span (click)="removeItemFromCart(item.Id)" >< </span>{{ item.quantity }} <span (click)="addItemToCart(item.Id)"> ></span></td>
+
+      </div>
+      <td> <div class="img">
+
+        <img [src]="item.img" alt="">
+      </div>
+      <div  class="title">{{item.Name}}</div></td>
       <!-- <td ></td> -->
-      
+      <!-- <td (click)=remove(item.id)>remove</td> -->
     </tr>
   </tbody>
 </table>

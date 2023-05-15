@@ -28,7 +28,24 @@ img {
     width: auto; 
     max-width: 150px; 
     max-height: 150px;
+    display: block;
+  margin: 0 auto;
 }
 body {
     font-size: 55px;
 }
+span{
+  
+}
+.title{
+  text-align: center;
+}
+ .quantity{
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  font-size: large;
+  margin-top: 40px;
+  cursor: pointer;
+
+ }

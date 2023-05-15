@@ -4,6 +4,7 @@ import { __values } from 'tslib';
 import { DesignutilityService } from '../appServices/designutility.service';
 import { ProductsService } from '../appServices/products.service';
 import { Auth } from '../auth.service';
+import {Cartservice} from '../appServices/quantityitem.service'
 
 
 @Component({
@@ -14,10 +15,11 @@ import { Auth } from '../auth.service';
 export class ProductComponent implements OnInit {
   
 
-  constructor(private _cart: DesignutilityService,
+  constructor(
     private router: Router,
-    private authService: Auth,private _products :ProductsService) {
-    this.abc = this._cart.cart;
+    private authService: Auth,private _products :ProductsService
+    ,private _cartService:Cartservice) {
+   
     this.products = this._products.products
     
   }
@@ -38,24 +40,10 @@ export class ProductComponent implements OnInit {
   }
   inputnumber = 0;
 
-  plus(val: any) {
-    this.productSelected = true
-    this.selectedProduct = this.products[val-1].Name
-    
-    console.log('heheheh',this.abc)
-    
-    // console.log(val)
-    //console.log(this.products[val-1]);
-    this.products[val-1].quantity= this.products[val-1].quantity+1;
-    //console.log(this.products[val-1].quantity);
+  addItemToCart(item: any): void {
+    this._cartService.addItem(item)
   }
-  minus(val:any) {
-    if (this.products[val-1].quantity!==0) {
-        this.products[val-1].quantity = this.products[val-1].quantity-1
-    }
-    else
-    {
-      this.productSelected= false
-    }
+  removeItemFromCart(item:any):void{
+    this._cartService.removeItem(item)
   }
 }

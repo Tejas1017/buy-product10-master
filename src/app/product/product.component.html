@@ -5,11 +5,11 @@
 <table>
     <tr  class="list-group-item container" *ngFor="let item of products">
       <tbody>
-        <td #target>{{item.Id}} </td>
+        <!-- <td #target>{{item.Id}} </td> -->
         <td> {{item.Name}}</td>
         <td><img [src]="item.img" alt=""></td>
-        <td><button  class="btn btn-primary" (click)="plus(item.Id)">+</button> {{item.quantity}} 
-          <button   class="btn btn-primary" (click)="minus(item.Id)">-</button>
+        <td><button  class="btn btn-primary" (click)="addItemToCart(item.Id)">+</button> {{item.quantity}} 
+          <button   class="btn btn-primary" (click)="removeItemFromCart(item.Id)">-</button>
         </td>
       </tbody>
     </tr>
@@ -22,7 +22,7 @@
       <div class="col-md-10 bg-success text-center py-4 text-white">
         <h2 *ngIf=!productSelected>Select Product</h2>
         <h2 *ngIf=productSelected> Product Selected</h2>
-        <a *ngIf=productSelected class="btn btn-primary " (click)='checkout() '> check Out</a>
+        <a productSelected class="btn btn-primary " (click)='checkout() '> check Out</a>
         <br>
         <br>
       </div>
